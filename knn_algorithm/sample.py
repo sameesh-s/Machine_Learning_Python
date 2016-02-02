@@ -33,16 +33,19 @@ for i in range(len(lines)):
 	print distance,clas
 	top = 2
 	print top
+	print distance <=neighbour[0][top] and top > -1
 	while ( distance <= neighbour[0][top] and top > -1 ):
+		top=top-1
+	top=top+1
+	while(top < n):
 		#swap element
 		tempD=neighbour[0][top]
 		tempC=neighbour[1][top]
 		neighbour[0][top]=distance
 		neighbour[1][top]=clas
-		disatnce=tempD
+		distance=tempD
 		clas=tempC
-		top = top - 1
+		top = top + 1
 		print "inside while"
 		print neighbour
-
 print most_common(neighbour[1])
